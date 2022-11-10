@@ -28,6 +28,9 @@ def _download_detection_model():
         model_file.close()
 
 def get_detection_model():
+    model_folder = Path("models")
+    if not model_folder.exists():
+        os.mkdir("models")
     model_path = Path("models/detection_model.pt")
 
     # Download if the model does not exist
@@ -42,6 +45,9 @@ def get_detection_model():
     return model
     
 def get_model():
+    model_folder = Path("models")
+    if not model_folder.exists():
+        os.mkdir("models")
     model_path = Path('models/scoliovis_segmentation_model.h5')
     if model_path.is_file():
         print("The model is already downloaded.")
