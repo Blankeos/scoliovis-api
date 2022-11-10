@@ -1,2 +1,2 @@
-[phases.build]
+[phases.install]
 cmds = ['...', 'git submodule update --init']
