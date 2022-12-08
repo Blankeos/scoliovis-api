@@ -4,10 +4,8 @@ from torchvision.transforms import functional as F
 import numpy as np
 from scoliovis.get_model import get_kprcnn_model
 
-device = torch.device('cpu')
-model = get_kprcnn_model()
-model.to(device)
-model.eval()
+# DOWNLOAD THE MODEL (but don't cache)
+get_kprcnn_model()
 
 def _filter_output(output):
   # 1. Get Scores
@@ -65,6 +63,11 @@ def predict(images):
 
     returns (bboxes, keypoints, scores)[] of n=17
   """
+  device = torch.device('cpu')
+  model = get_kprcnn_model()
+  model.to(device)
+  model.eval()
+
   # 1. Process `images`
   images_input = [F.to_tensor(images)]
 
