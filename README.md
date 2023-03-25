@@ -17,21 +17,35 @@ For more information on the whole project go to [blankeos/scoliovis](https://git
 
 ### Installation
 
-```sh
-# 1. Clone repo
-> git clone https://github.com/blankeos/scoliovis-api.git
-> cd scoliovis-api
+1. Clone repo
 
-# 2. Create a virtual environment
-> python -m venv venv
+   ```sh
+   > git clone https://github.com/blankeos/scoliovis-api.git
+   > cd scoliovis-api
+   ```
 
-# 3. Activate virtual environment
-> venv\Scripts\activate # windows
-> source venv/Scripts/activate # bash/mac
+2. Create a virtual environment
 
-# 4. Install dependencies
-> pip install -r requirements.txt
+   ```sh
+   > python -m venv venv
+   ```
 
-# 5. Run the server
-> uvicorn main:app
-```
+3. Activate virtual environment
+   ```sh
+   > venv\Scripts\activate # windows
+   > source venv/Scripts/activate # bash/mac
+   ```
+4. Install dependencies
+
+   ```sh
+   > pip install -r requirements.txt
+   ```
+
+5. Download the model keypointsrcnn_weights.pt and put inside /models
+
+   - Download here: [scoliovis-training/releases/keypointsrcnn_weights.pt](https://github.com/Blankeos/scoliovis-training/releases/download/latest/keypointsrcnn_weights.pt)
+
+6. Run the server
+   ```sh
+   > uvicorn main:app
+   ```
